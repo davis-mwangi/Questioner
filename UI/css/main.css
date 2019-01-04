@@ -58,6 +58,8 @@
 .center-text {
     text-align: center;
 }
+
+.margin-tp-sm-1{ margin-top: 1rem;}
 .margin-tp-sm{ margin-top: 5rem;}
 .margin-tp-md{ margin-top: 8rem;}
 .margin-tp-lg{ margin-top: 10rem;}
@@ -67,3 +69,50 @@
 .margin-btm-lg{ margin-bottom: 10rem;}
 
 .margin-tp-btm-sm {margin:  3rem 0;}
+
+.heading-1 {
+
+}
+.heading-2 {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 1.3rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01071em;
+}
+.heading-4 {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 1.3rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.01071em;
+}
+
+.card-description {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 1.3rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+}
+
+.outline-btn {
+    padding: 1rem 1.5rem;
+    min-width: 6.4rem;
+    min-height: 3.1rem;
+    outline: none;
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    background-color: var(--color-white);
+    transition: all .2s;
+}
+.outline-btn:hover {
+    background-color: var(--color-white);
+    transform: scale(1.1);
+}
