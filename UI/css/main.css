@@ -16,6 +16,7 @@
     --color-grey-dark-2: #777;
     --color-grey-dark-3: #999;
 
+    --card: 0px 1px 3px 0px rgba(0,0,0,0.2), 0px 1px 1px 0px;
     --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
     --line:1px solid  var(--color-grey-light-2); 
     --shadow-light: 0 2rem 5rem rgba(0, 0, 0,.06);
@@ -46,3 +47,23 @@
     color: var(--color-grey-dark-2);
     min-height: 100vh;
  }
+ 
+ /*Utilities*/
+.heading-primary {
+    font-size: 3.2rem;
+    font-weight: 400;
+    display: block;
+}
+
+.center-text {
+    text-align: center;
+}
+.margin-tp-sm{ margin-top: 5rem;}
+.margin-tp-md{ margin-top: 8rem;}
+.margin-tp-lg{ margin-top: 10rem;}
+
+.margin-btm-sm{ margin-bottom: 5rem;}
+.margin-btm-md{ margin-bottom: 8rem;}
+.margin-btm-lg{ margin-bottom: 10rem;}
+
+.margin-tp-btm-sm {margin:  3rem 0;}
