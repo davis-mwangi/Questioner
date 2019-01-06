@@ -1,9 +1,9 @@
 /*DECLARING CUSTOM VARIABLES*/
 :root {
-    --color-primary: green;
+    --color-primary: #4caf50!important;;
     --color-primary-light: #119e11;
     --color-secondary: red;
-    --color-tertiary:#1976d2;
+    --color-tertiary:#2196f3 !important;
 
     --color-white:#fff;
     --color-black:black;
@@ -22,6 +22,7 @@
     --line:1px solid  var(--color-grey-light-2); 
     --shadow-light: 0 2rem 5rem rgba(0, 0, 0,.06);
     --shadow-light-1: 3px 3px 6px 6px rgba(0,0,0,.1), 0 1px 3px 0 rgba(0,0,0,.08);
+    --shadow-light-2: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
 }
  *{
      margin: 0;
@@ -68,6 +69,7 @@
 .margin-tp-lg{ margin-top: 10rem;}
 
 .margin-btm-sm-1{ margin-bottom: 1rem;}
+.margin-btm-sm-2{ margin-bottom: 2rem; }
 .margin-btm-sm{ margin-bottom: 5rem;}
 .margin-btm-md{ margin-bottom: 8rem;}
 .margin-btm-lg{ margin-bottom: 10rem;}
