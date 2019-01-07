@@ -836,3 +836,43 @@
 }
   
  
+/*MEDIA QUERIES*/
+@media screen and (max-width: 500px) {
+    .content-container {
+        padding: 0; 
+    }
+    .admin-header {  
+        margin: 2rem;
+    }
+    .heading-1-spaced {
+        font-size: 1.6rem;
+    }
+    .meetup-form-box {
+        padding: 2.4rem;
+    }
+    .heading-home {
+        font-size: 2.4rem; 
+    }
+    .home-descrption {
+        font-size: 1.6rem;
+        letter-spacing: .7px;
+        margin-left: -1.6rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .content-container {
+        padding: 0; 
+    }
+    .admin-header {  
+        margin: 2rem;
+    }
+    .heading-1-spaced {
+        font-size: 1.6rem;
+    }
+    .meetup-form-box {
+    padding: 2rem;      
+    }
+
+}
