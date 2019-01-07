@@ -1,0 +1,48 @@
+/*DECLARING CUSTOM VARIABLES*/
+:root {
+    --color-primary: green;
+    --color-primary-light: #119e11;
+    --color-secondary: red;
+
+    --color-white:#fff;
+    --color-black:black;
+
+    --color-grey-light-1: #faf9f9;
+    --color-grey-light-2: #f4f2f2;
+    --color-grey-light-3: #f0eeee;
+    --color-grey-light-4: #ccc;
+
+    --color-grey-dark-1: #333;
+    --color-grey-dark-2: #777;
+    --color-grey-dark-3: #999;
+
+    --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+    --line:1px solid  var(--color-grey-light-2); 
+    --shadow-light: 0 2rem 5rem rgba(0, 0, 0,.06);
+}
+ *{
+     margin: 0;
+     padding: 0;
+ }
+
+ *,
+ *::before,
+ *::after {
+     box-sizing: inherit;
+ }
+
+ /*
+ 1 rem = 10px; 10px/16px=62.5%;
+ */
+ html {
+     box-sizing: border-box;
+     font-size: 62.5%; 
+ }
+
+ body {
+    font-family: "Open Sans",sans-serif;
+    font-weight:400;
+    line-height: 1.6;
+    color: var(--color-grey-dark-2);
+    min-height: 100vh;
+ }
