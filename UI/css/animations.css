@@ -1,0 +1,5 @@
+/* ANIMATIONS ================ */
+@keyframes inputHighlighter {
+  from { background: var(--color-primary) }
+  to 	{ width:0; background:transparent; }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600" rel="stylesheet">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/animations.css">
+        <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+        <title>Create Meetup</title>
+        
+    </head>
+    <body>
+            <header class="header">
+                <a href="../index.html"><img src="../images/questioner_logo.png" alt="Questioner Logo" class="header-logo"></a>
+                <nav class="user-nav">
+                    <a href="adminPage.html" class="profile_nav"><div class="user-nav__user">
+                            <img src="../images/user-5.png" alt="User Photo" class="user-nav__user-photo">
+                            <span class="user-nav__user-name">Admin</span>
+                        </div></a>
+                </nav>
+               
+            </header>
+            <div class="container bg-grey">
+                <div class="admin-header">
+                    <h1 class="heading-1-spaced">Schedule Meetup</h1>
+                </div>
+                <div class="content-container">
+                        <div class="meetup-form-box">
+                            <form class="meetup-form">
+                                <div class="group">      
+                                  <input type="text" required>
+                                  <span class="highlight"></span>
+                                  <span class="bar"></span>
+                                  <label>Meetup Name</label>
+                                </div>
+                                  
+                                <div class="group">      
+                                  <input type="text" required>
+                                  <span class="highlight"></span>
+                                  <span class="bar"></span>
+                                  <label>Description</label>
+                                </div>
+
+                                <div class="group">      
+                                    <input type="datetime-local" required>
+                                    <span class="highlight"></span>
+                                    <span class="bar"></span>
+                                   
+                                  </div>
+                                <button class="btn btn-green">Add Meetup</button>
+                                
+                              </form>
+                        </div>
+                            
+                                    
+                                    
+                </div>
+            </div>            
+    </body>   
+</html>         

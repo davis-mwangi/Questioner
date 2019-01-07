@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600" rel="stylesheet">
+        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+        <title>User</title>
+        
+    </head>
+    <body>
+            <header class="header">
+                <a href="../index.html"><img src="../images/questioner_logo.png" alt="Questioner Logo" class="header-logo"></a>
+                <nav class="user-nav">
+                    <a href="userProfile.html" class="profile_nav"><div class="user-nav__user">
+                            <img src="../images/user-5.png" alt="User Photo" class="user-nav__user-photo">
+                            <span class="user-nav__user-name">Admin</span>
+                        </div></a>
+                </nav>
+               
+            </header>
+            <div class="container bg-grey">
+                <div class="admin-header">
+                    <h1 class="heading-1-spaced">Scheduled Meetup</h1>
+                    <a href="createMeetup.html"><button class="heading-btn">Add Meetup</button></a>
+                </div>
+                <div class="content-container">
+                        
+                            <figure  class="meetup-card">
+                                <div class="card-header">
+                                    <div class="card-header__tag">
+                                        <span class="date-display-day">7</span>
+                                        <span class="date-display-month">Jan</span>
+                                    </div>
+                                    <div class="card-header__text">
+                                        <h3 class="heading-2">Current Trends in React Js</h3>
+                                        <p class="heading-4">January 7, 2019 8.30 A.M</p>
+                                    </div>
+                                      <div class="card-header__icon-box">
+                                        <img src="../images/overflow_icon.png" alt="Card Overflow" class="card-header__icon">     
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <img src="../images/react_js.png" alt="Card Overflow" class="meetup-img">
+                                    <div class="card-footer">
+                                       <p class="card-description">React javascript  framework is now becoming popular and many companies are falling with it.Lets join and discuss how react js can help solve our current issues...</p>
+                                       <div class="card-buttons">
+                                            <button id="trigger" class="outline-btn btn-red margin-tp-sm-1 ">Delete </button>
+                                            <button class="outline-btn btn-primary margin-tp-sm-1 ">View Meetup &rarr; </button>
+                                        </div>
+                                    </div>
+            
+                                </div>
+                               
+                            </figure>
+
+                            <figure  class="meetup-card">
+                                    <div class="card-header">
+                                        <div class="card-header__tag">
+                                            <span class="date-display-day">14</span>
+                                            <span class="date-display-month">Jan</span>
+                                        </div>
+                                        <div class="card-header__text">
+                                            <h3 class="heading-2">Food Nutrition in current life</h3>
+                                            <p class="heading-4">January 14, 2019 11.30 A.M</p>
+                                        </div>
+                                          <div class="card-header__icon-box">
+                                            <img src="../images/overflow_icon.png" alt="Card Overflow" class="card-header__icon">     
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <img src="../images/food.jpg" alt="Card Overflow" class="meetup-img">
+                                        <div class="card-footer">
+                                            <p class="card-description">With so many emerging health issues currently facing the current world.Lets join to discuss how we can enhance our health by consuming healthy foods...</p>
+                                            <div class="card-buttons">
+                                                <button class="outline-btn btn-red margin-tp-sm-1 ">Delete </button>
+                                                <button class="outline-btn btn-primary margin-tp-sm-1 ">View Meetup &rarr; </button>
+                                            </div>
+                                        </div>
+                
+                                    </div>
+                                   
+                                </figure>
+
+                                <figure  class="meetup-card">
+                                        <div class="card-header">
+                                            <div class="card-header__tag">
+                                                <span class="date-display-day">2</span>
+                                                <span class="date-display-month">Feb</span>
+                                            </div>
+                                            <div class="card-header__text">
+                                                <h3 class="heading-2">Real estate  changing the world</h3>
+                                                <p class="heading-4">February 2, 2019 8.30 A.M</p>
+                                            </div>
+                                              <div class="card-header__icon-box">
+                                                <img src="../images/overflow_icon.png" alt="Card Overflow" class="card-header__icon">     
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <img src="../images/real_estate.jpg" alt="Card Overflow" class="meetup-img">
+                                            <div class="card-footer">
+                                               <p class="card-description">This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like...</p>
+                                               <div class="card-buttons">
+                                                    <button  class="outline-btn btn-red margin-tp-sm-1">Delete </button>
+                                                    <button class="outline-btn btn-primary margin-tp-sm-1 ">View Meetup &rarr; </button>
+                                                </div>
+                            
+                                            </div>
+                    
+                                        </div>
+                                       
+                                </figure>
+                                    
+                                    
+                        </div>
+                    </div>    
+            <!--Delete Modal-->
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-button">×</span>
+                    <h1 class="modal-header">Confirm Delete</h1>
+                    <p class="modal-description margin-tp-sm-1 margin-btm-sm-2">Are you sure you want to delete <strong>'Current Trends in React Js'</strong> meetup ?</p>
+                    <div>
+                        <a href="adminPage.html"><button  class="outline-btn btn-red margin-tp-sm-1">Cancel </button></a>
+                        <button class="outline-btn btn-primary margin-tp-sm-1 ">Delete</button>  
+                    </div>
+                </div>
+            </div>  
+         <script src="../js/main.js"></script>          
+    </body>   
+</html>         
