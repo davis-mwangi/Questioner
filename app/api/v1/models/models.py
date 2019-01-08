@@ -2,6 +2,7 @@ from werkzeug.security import generate_password_hash
 from datetime import datetime
 
 users =[]
+meetups = []
 
 
 class User(object):
@@ -30,8 +31,27 @@ class User(object):
         }    
         users.append(user)
 
+class Meetup(object):
+    def __init__(self, data):
+        self.createdOn = datetime.now()
+        self.location = data['location']
+        self.topic = data['topic']
+        self.happeningOn = data['happeningOn']
+        self.tags =  data['Tags']
 
+    def save_meetup(self):
+        id = len(users) + 1
+        meetup = {
+            'id': id,
+            'createdOn' : self.createdOn ,
+            'location' : self.location ,
+            'topic' : self.topic ,
+            'happeningOn' : self.happeningOn ,
+            'Tags' :self.tags ,
+        }    
+        meetups.append(meetup)
 
+     
 def destroy():
     users.clear()
 

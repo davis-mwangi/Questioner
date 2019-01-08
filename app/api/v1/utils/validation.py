@@ -67,3 +67,8 @@ class UserValidation(object):
         self.check_blank()
         self.check_type()
         self.validate_email()
+
+class MeetupValidation(object):
+    def __init__(self, data):
+        pass
+       

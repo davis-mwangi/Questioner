@@ -114,21 +114,20 @@ class TestsForApi(unittest.TestCase):
                          'error'], "User 'david-mwnangi'already exists")
 
     
-    # def test_create_meetup(self):
-    #     """Test admin can create meetup record"""
-    #     meetup = json.dumps({
-    #         "location": "Nairobi,Kenya",
-    #         "images": "/images/setup",
-    #         "topic": "Current trends React Js",
-    #         "happeningOn": "14/01/2019",
-    #         "Tags": []
-    #     })
-    #     response = self.test_client.post("/api/v1/meetups",
-    #                                      data=meetup,
-    #                                      headers={
-    #                                          'content-type': 'application/json'
-    #                                      })
-    #     self.assertEqual(response.status_code, 201)
+    def test_create_meetup(self):
+        """Test admin can create meetup record"""
+        meetup = json.dumps({
+            	"location": "Nairobi,Kenya",
+                "topic": "Current trends in React JS",
+                "happeningOn":"14/01/2019 08.30 A.M",
+                "Tags": []
+        })
+        response = self.test_client.post("/api/v1/meetups",
+                                         data=meetup,
+                                         headers={
+                                             'content-type': 'application/json'
+                                         })
+        self.assertEqual(response.status_code, 201)
 
     # def test_create_question(self):
     #     """Test user  can post a question to a meetup"""
