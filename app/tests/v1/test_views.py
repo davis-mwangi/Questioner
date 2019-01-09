@@ -145,6 +145,17 @@ class TestsForApi(unittest.TestCase):
                                              })
         self.assertEqual(response.status_code, 201)
 
+    def test_get_single_meetup(self):
+        response = self.test_client.get('/api/v1/meetups/1', headers={
+                'content-type': 'application/json'})
+        self.assertEqual(response.status_code, 200) 
+
+    def test_meetup_not_found(self):
+        response = self.test_client.get('/api/v1/meetups/6', headers={
+                'content-type': 'application/json'})
+        self.assertEqual(response.status_code, 404)
+        self.assertEqual(json_response(response)['error'],  "No such meetup found")        
+
     # def test_create_meetup_rsvp(self):
     #     """Test user can create an  rsvp"""
     #     rsvp = json.dumps({
@@ -180,10 +191,7 @@ class TestsForApi(unittest.TestCase):
     #             'content-type': 'application/json'})
     #     self.assertEqual(response.status_code, 200)
 
-    # def test_user_get_single_meetup(self):
-    #     response = self.test_client.get('/api/v1/meetups/1', headers={
-    #             'content-type': 'application/json'})
-    #     self.assertEqual(response.status_code, 200)
+    
 
 
 if __name__ == "__main__":
