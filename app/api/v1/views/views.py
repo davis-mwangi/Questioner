@@ -59,4 +59,29 @@ class MeetupResource(Resource):
             'data': meetups
         }), 201)
 
+class QuestionResource(Resource):
+    """Post a question"""
+    def post(self):
+        data = request.get_json()
+        if not data:
+            return make_response(jsonify( {
+                'status':'400',
+                'error': 'No question  provided'
+            }), 400)
+        for question in questions:
+            if data['title'] == question['title']:
+               return make_response(jsonify({
+                    'status':'409',
+                    'error': "Question  with title '" + question['title'] + "'already exists"
+                }), 409)
+
+        question = Question(data)
+        question.save_question()
+        
+        return make_response(jsonify({
+            'status':'201',
+            'message': 'Question created successfully',
+            'data': questions
+        }), 201)
+
 

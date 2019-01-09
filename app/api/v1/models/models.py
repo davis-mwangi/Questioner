@@ -3,6 +3,7 @@ from datetime import datetime
 
 users =[]
 meetups = []
+questions = []
 
 
 class User(object):
@@ -40,7 +41,7 @@ class Meetup(object):
         self.tags =  data['Tags']
 
     def save_meetup(self):
-        id = len(users) + 1
+        id = len(meetups) + 1
         meetup = {
             'id': id,
             'createdOn' : self.createdOn ,
@@ -51,9 +52,33 @@ class Meetup(object):
         }    
         meetups.append(meetup)
 
+class Question(object):
+    def __init__(self, data):
+        self.createdOn = datetime.now()
+        self.createdBy = data['createdBy']
+        self.meetup = data['meetup']
+        self.title = data['title']
+        self.body =  data['body']
+        self.votes = data['votes']
+
+    def save_question(self):
+        id = len(questions) + 1
+        question = {
+            'id': id,
+            'createdOn' : self.createdOn ,
+            'createdBy' : self.createdBy ,
+            'meetup' : self.meetup ,
+            'title' : self.title ,
+            'body' :self.body ,
+            'votes': self.votes
+        }    
+        questions.append(question)
+
      
 def destroy():
     users.clear()
+    meetups.clear()
+    questions.clear()
 
 
 

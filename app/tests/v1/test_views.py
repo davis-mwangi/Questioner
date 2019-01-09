@@ -28,17 +28,17 @@ class TestsForApi(unittest.TestCase):
 
         self.meetup_info = json.dumps({
             "location": "Nairobi,Kenya",
-            "images": "/images/setup",
-            "topic": "Current trends React Js",
-            "happeningOn": "14/01/2019",
+            "topic": "Current trends in React JS",
+            "happeningOn":"14/01/2019 08.30 A.M",
             "Tags": []
         })
 
         self.question_info = json.dumps({
+            "createdBy": 1,
             "meetup": 1,
-            "title": "Integrate React Js with google maps",
-            "body": "How dow integrate React Js with google maps",
-            "votes": 10
+            "title":"Test React redux apps",
+            "body":"How do one test react redux applications",
+            "votes": 9
         })
 
         self.meetup_rsvp = json.dumps({
@@ -118,8 +118,8 @@ class TestsForApi(unittest.TestCase):
         """Test admin can create meetup record"""
         meetup = json.dumps({
             	"location": "Nairobi,Kenya",
-                "topic": "Current trends in React JS",
-                "happeningOn":"14/01/2019 08.30 A.M",
+                "topic": "Food Nutrition in current life",
+                "happeningOn":"January 14, 2019 11.30 A.M",
                 "Tags": []
         })
         response = self.test_client.post("/api/v1/meetups",
@@ -129,19 +129,21 @@ class TestsForApi(unittest.TestCase):
                                          })
         self.assertEqual(response.status_code, 201)
 
-    # def test_create_question(self):
-    #     """Test user  can post a question to a meetup"""
-    #     question = json.dumps({
-    #             "title": "Test React redux apps",
-    #             "body": "How do one test react redux applications",
-    #             "votes": 9
-    #     })
-    #     response = self.test_client.post("/api/v1/questions",
-    #                                          data=question,
-    #                                          headers={
-    #                                              'content-type': 'application/json'
-    #                                          })
-    #     self.assertEqual(response.status_code, 201)
+    def test_create_question(self):
+        """Test user  can post a question to a meetup"""
+        question = json.dumps({
+                	"createdBy": 1,
+                    "meetup": 1,
+                    "title":"Intefrating google maps with React",
+                    "body":"How to Integrate react app with google maps",
+                    "votes": 9
+        })
+        response = self.test_client.post("/api/v1/questions",
+                                             data=question,
+                                             headers={
+                                                 'content-type': 'application/json'
+                                             })
+        self.assertEqual(response.status_code, 201)
 
     # def test_create_meetup_rsvp(self):
     #     """Test user can create an  rsvp"""
