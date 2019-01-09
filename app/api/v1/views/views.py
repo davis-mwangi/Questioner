@@ -78,6 +78,21 @@ class SingleMeetup(Resource):
         }), 404)
 
 
+class UpcomingMeetupsResource(Resource):
+    """Get all upcoming meetups"""
+
+    def get(self):
+        if len(meetups) == 0:
+            return make_response(jsonify({
+                'status': 404,
+                'error': 'No meetup records found'
+            }), 404)
+        return make_response(jsonify({
+            'status': 200,
+            'data': meetups
+        }), 200)
+
+
 class QuestionResource(Resource):
     """Post a question"""
 

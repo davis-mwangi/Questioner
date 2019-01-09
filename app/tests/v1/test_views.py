@@ -29,15 +29,15 @@ class TestsForApi(unittest.TestCase):
         self.meetup_info = json.dumps({
             "location": "Nairobi,Kenya",
             "topic": "Current trends in React JS",
-            "happeningOn":"14/01/2019 08.30 A.M",
+            "happeningOn": "14/01/2019 08.30 A.M",
             "Tags": []
         })
 
         self.question_info = json.dumps({
             "createdBy": 1,
             "meetup": 1,
-            "title":"Test React redux apps",
-            "body":"How do one test react redux applications",
+            "title": "Test React redux apps",
+            "body": "How do one test react redux applications",
             "votes": 9
         })
 
@@ -108,19 +108,18 @@ class TestsForApi(unittest.TestCase):
                                          data=user_info,
                                          headers={
                                              'content-type': 'application/json'
-                                         })                                 
+                                         })
         self.assertEqual(response.status_code, 409)
         self.assertEqual(json_response(response)[
                          'error'], "User 'david-mwnangi'already exists")
 
-    
     def test_create_meetup(self):
         """Test admin can create meetup record"""
         meetup = json.dumps({
-            	"location": "Nairobi,Kenya",
-                "topic": "Food Nutrition in current life",
-                "happeningOn":"January 14, 2019 11.30 A.M",
-                "Tags": []
+            "location": "Nairobi,Kenya",
+            "topic": "Food Nutrition in current life",
+            "happeningOn": "January 14, 2019 11.30 A.M",
+            "Tags": []
         })
         response = self.test_client.post("/api/v1/meetups",
                                          data=meetup,
@@ -132,29 +131,41 @@ class TestsForApi(unittest.TestCase):
     def test_create_question(self):
         """Test user  can post a question to a meetup"""
         question = json.dumps({
-                	"createdBy": 1,
-                    "meetup": 1,
-                    "title":"Intefrating google maps with React",
-                    "body":"How to Integrate react app with google maps",
+            "createdBy": 1,
+            "meetup": 1,
+            "title": "Intefrating google maps with React",
+            "body": "How to Integrate react app with google maps",
                     "votes": 9
         })
         response = self.test_client.post("/api/v1/questions",
-                                             data=question,
-                                             headers={
-                                                 'content-type': 'application/json'
-                                             })
+                                         data=question,
+                                         headers={
+                                             'content-type': 'application/json'
+                                         })
         self.assertEqual(response.status_code, 201)
 
     def test_get_single_meetup(self):
         response = self.test_client.get('/api/v1/meetups/1', headers={
-                'content-type': 'application/json'})
-        self.assertEqual(response.status_code, 200) 
+            'content-type': 'application/json'})
+        self.assertEqual(response.status_code, 200)
 
     def test_meetup_not_found(self):
         response = self.test_client.get('/api/v1/meetups/6', headers={
-                'content-type': 'application/json'})
+            'content-type': 'application/json'})
         self.assertEqual(response.status_code, 404)
-        self.assertEqual(json_response(response)['error'],  "No such meetup found")        
+        self.assertEqual(json_response(response)[
+                         'error'],  "No such meetup found")
+
+    def test_get_all_meetups(self):
+        response = self.test_client.get('/api/v1/meetups/upcoming', headers={
+            'content-type': 'application/json'})
+        self.assertEqual(response.status_code, 200)
+
+    def test_no_meetups_exists(self):
+        destroy()
+        response = self.test_client.get('/api/v1/meetups/upcoming', headers={
+                'content-type': 'application/json'})
+        self.assertEqual(response.status_code, 404)    
 
     # def test_create_meetup_rsvp(self):
     #     """Test user can create an  rsvp"""
@@ -185,13 +196,6 @@ class TestsForApi(unittest.TestCase):
     #                                               'content-type': 'application/json'
     #                                           })
     #     self.assertEqual(response.status_code, 200)
-
-    # def test_user_get_all_meetups(self):
-    #     response = self.test_client.get('/api/v1/meetups/upcoming', headers={
-    #             'content-type': 'application/json'})
-    #     self.assertEqual(response.status_code, 200)
-
-    
 
 
 if __name__ == "__main__":
